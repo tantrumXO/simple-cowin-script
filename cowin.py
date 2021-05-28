@@ -7,6 +7,7 @@ from datetime import date
 state = "9"
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 sender = 'this particular cowin api script thing.'
+# specify the receivers' emails below.
 receivers = ['email_id_1', 'email_id_2']
 
 def send_email(message):
@@ -14,6 +15,7 @@ def send_email(message):
 	server.ehlo()
 	server.starttls()
 	server.ehlo()
+	# specify the credentials of the gmail account you'll use to send emails.
 	server.login('email_id', 'password')
 	server.sendmail('email_id', receivers, message)
 	server.close()
